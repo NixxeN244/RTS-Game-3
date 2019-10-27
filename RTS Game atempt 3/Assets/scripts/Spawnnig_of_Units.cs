@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class Spawnnig_of_Units : MonoBehaviour
 {
-    public GameObject meleeUnits;
-    public GameObject rangedUnits;
-    public GameObject wizardUnits;
-    public GameObject base1;
-    public GameObject base2;
-    public GameObject base3;
+    public GameObject ThisObjectsUnit;
+    //public GameObject T1rangedUnit;
+    //public GameObject T1wizardUnit;
+
+    //public GameObject spawnLoc1;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            //GameObject spawnW = Instantiate(wizardUnits, base1.transform.position, Quaternion.identity);
-            
-           GameObject spawnM = Instantiate(meleeUnits, base1.transform.position, Quaternion.identity);
-            spawnM.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, 5f), ForceMode.Impulse);
-            //GameObject spawnR = Instantiate(rangedUnits, base1.transform.position, Quaternion.identity);
-        }
+        GameObject TM1 = Instantiate(ThisObjectsUnit, this.gameObject.transform.position, Quaternion.identity);
 
     }
 
