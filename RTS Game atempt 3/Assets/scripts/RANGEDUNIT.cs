@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class RANGEDUNIT : MonoBehaviour
 {
-    public GameObject theEnemy;
+    private GameObject theEnemy;
     NavMeshAgent agent;
     System.Random rnd = new System.Random();
 
@@ -39,10 +39,10 @@ public class RANGEDUNIT : MonoBehaviour
     void Update()
     {
         agent.SetDestination(theEnemy.transform.position);
-        float distance = 2f;
+        float distance = 5f;
         if (Vector3.Distance(theEnemy.transform.position, this.gameObject.transform.position) < distance)
         {
-            Destroy(theEnemy);
+            Destroy(theEnemy.gameObject);
             Destroy(this.gameObject);
         }
         else
